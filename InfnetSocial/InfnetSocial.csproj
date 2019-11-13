@@ -5,6 +5,17 @@
     <UserSecretsId>aspnet-InfnetSocial-1EF66C65-A90B-4D7B-965D-43A747675817</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20191113152303_Dominio_0.2_Amizade.cs" />
+    <Compile Remove="Data\Migrations\20191113152303_Dominio_0.2_Amizade.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191113152544_Dominio_0.3_Amizade.cs" />
+    <Compile Remove="Data\Migrations\20191113152544_Dominio_0.3_Amizade.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191113152800_Dominio_0.4.cs" />
+    <Compile Remove="Data\Migrations\20191113152800_Dominio_0.4.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191113152943_Dominio_0.5.cs" />
+    <Compile Remove="Data\Migrations\20191113152943_Dominio_0.5.Designer.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.0.0" />

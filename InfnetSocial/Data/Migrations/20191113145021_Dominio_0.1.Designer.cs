@@ -4,35 +4,22 @@ using InfnetSocial.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace InfnetSocial.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191113145021_Dominio_0.1")]
+    partial class Dominio_01
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("InfnetSocial.Models.Amizade", b =>
-                {
-                    b.Property<int>("UsuarioIdA")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UsuarioIdB")
-                        .HasColumnType("int");
-
-                    b.HasKey("UsuarioIdA", "UsuarioIdB");
-
-                    b.HasIndex("UsuarioIdB");
-
-                    b.ToTable("Amizade");
-                });
 
             modelBuilder.Entity("InfnetSocial.Models.Usuario", b =>
                 {
@@ -255,21 +242,6 @@ namespace InfnetSocial.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("InfnetSocial.Models.Amizade", b =>
-                {
-                    b.HasOne("InfnetSocial.Models.Usuario", "UsuarioA")
-                        .WithMany("AmizadesSolicitadas")
-                        .HasForeignKey("UsuarioIdA")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("InfnetSocial.Models.Usuario", "UsuarioB")
-                        .WithMany("AmizadesRecebidas")
-                        .HasForeignKey("UsuarioIdB")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("InfnetSocial.Models.Usuario", b =>

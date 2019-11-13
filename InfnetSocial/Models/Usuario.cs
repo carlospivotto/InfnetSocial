@@ -12,5 +12,8 @@ namespace InfnetSocial.Models
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public IdentityUser IdentityUser { get; set; }
+        
+        public ICollection<Amizade> AmizadesA { get; set; }
+        public ICollection<Amizade> AmizadesB { get; set; }
     }
 }
